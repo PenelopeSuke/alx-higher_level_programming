@@ -13,4 +13,4 @@ if last > 5:
 elif last == 0:
     print("Last digit of {} is {}".format(number, last) + s2)
 else:
-    print("Last digit of {} is {}".format(number, last) + str3)
+    print("Last digit of {} is {}".format(number, last) + s3)
