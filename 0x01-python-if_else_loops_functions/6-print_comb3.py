@@ -1,8 +1,15 @@
 #!/usr/bin/python3
 
-for dig1 in range(0, 10):
-    for dig2 in range(dig1 + 1, 10):
-        if dig1 == 8 and dig2 == 9:
-             print("{}{}".format(dig1, dig2))
-         else:
-             print("{}{}".format(dig1, dig2), end=", ")
+dig1 = 0
+dig2 = 1
+while dig1 <= 8:
+    while dig2 <= 9:
+        if dig1 != dig2:
+             print("{:d}".format(dig1), end='')
+             if dig1 != 8:
+                 print("{:d}, ".format(dig2), end='')
+             else:
+                  print("{:d}".format(dig2))
+                   dig2 += 1
+                   dig2 = dig1 + 1
+                   dig1 = dig1 + 1
