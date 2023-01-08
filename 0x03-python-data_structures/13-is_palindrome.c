@@ -7,17 +7,17 @@
  */
 int is_palindrome(listint_t **head)
 {
-	unsigned int len = 1;
-	listint_t *temp;
+	unsigned int cur = 1;
+	listint_t *tem;
 
-	if (head == NULL|| *head == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
 
-	temp = *head;
-	while (temp)
+	tem = *head;
+	while (tem)
 	{
-		temp = temp->next;
-		len++;
+		tem = tem->next;
+		cur++;
 	}
 	return (0);
 }
