@@ -1,43 +1,15 @@
 #!/usr/bin/python3
 
 def roman_to_int(roman_string):
-    if not roman_string:
-        return 0
-    if not isinstance(roman_string, str):
-        return 0
-    if not roman_string.isupper():
-        return 0
-    r_dict = {
-        "I": 1,
-        "IV": 4,
-        "V": 5,
-        "IX": 9,
-        "X": 10,
-        "L": 50,
-        "C": 100,
-        "D": 500,
-        "M": 1000
-    }
-
+    val = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
     r = 0
-    tem = list(roman_string)
-    if len(tem) > 1:
-        idx = 0
-        for a in tem:
-            try:
-                if tem[idx] == 'I' and tem[idx + 1] == 'V':
-                    tem[idx:idx + 2] = [''.join(tem[idx:idx + 2])]
-         except IndexError:
-             pass
-         try:
-             if tem[idx] == 'I' and tem[idx + 1] == 'X':
-                 tem[idx:idx + 2] = [''.join(tem[idx:idx + 2])]
-        except IndexError:
-            pass
-        idx += 1
-    for k, v in r_dict.items():
-        for index == k:
-            if index == k:
-                r += v
-    return r
+    s = 0
 
+    if type(roman_string) is str and roman_string:
+        for c in range(len(roman_string) - 1, -1, -1):
+            if val[roman_string[c]] >= s:
+                r += val[roman_string[c]]
+            else:
+                r -= val[roman_string[c]]
+                s = val[roman_string[c]]
+                return r
